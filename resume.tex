@@ -1,0 +1,282 @@
+% =====================================================================
+%  冯宇杰 / Yujie Feng — Bilingual Academic Résumé
+%  Compile with: xelatex resume.tex   (run twice for refs)
+%  Theme: NJU Purple (#7B2D8E) + Blue accent (#2563EB)
+% =====================================================================
+
+\documentclass[11pt,a4paper]{article}
+
+% --- Languages & fonts ---
+\usepackage{ctex}                 % Chinese support
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}              % Latin Modern
+\usepackage{fontawesome5}         % Icons (envelope, map-marker, etc.)
+
+% --- Page layout ---
+\usepackage[a4paper, margin=1.6cm, top=1.4cm, bottom=1.6cm]{geometry}
+
+% --- Colors ---
+\usepackage[table]{xcolor}
+\definecolor{njupurple}{HTML}{7B2D8E}
+\definecolor{njupurpledark}{HTML}{5B1F7A}
+\definecolor{njupurplelight}{HTML}{F3EBFA}
+\definecolor{njupurpleborder}{HTML}{E5D6F0}
+\definecolor{njublue}{HTML}{2563EB}
+\definecolor{njubluelight}{HTML}{DBEAFE}
+\definecolor{bodygray}{HTML}{374151}
+\definecolor{mutedgray}{HTML}{6B7280}
+\definecolor{bggray}{HTML}{FAFAFC}
+
+% --- Boxes & tables ---
+\usepackage[most]{tcolorbox}
+\usepackage{tabularx}
+\usepackage{array}
+
+% --- Lists ---
+\usepackage{enumitem}
+\setlist[itemize]{leftmargin=14pt,nosep,topsep=2pt,parsep=1pt,itemsep=1pt,label={\textcolor{njupurple}{\textbullet}}}
+
+% --- Section formatting ---
+\usepackage{titlesec}
+\titleformat{\section}
+  {\normalsize\bfseries\color{njupurple}}
+  {}{0pt}{\MakeUppercase}
+  [\vspace{-4pt}\color{njupurple}\hrule height 1.2pt]
+\titlespacing*{\section}{0pt}{12pt}{6pt}
+
+\titleformat{\subsection}
+  {\small\bfseries\color{njublue}}
+  {}{0pt}{}
+\titlespacing*{\subsection}{0pt}{8pt}{4pt}
+
+% --- Links ---
+\usepackage[hidelinks,colorlinks=true,urlcolor=njublue]{hyperref}
+\hypersetup{
+  pdftitle={冯宇杰 / Yujie Feng — Resume},
+  pdfauthor={冯宇杰 / Yujie Feng},
+  pdfsubject={NJU Undergraduate Resume · Chemistry-Biology Interdisciplinary}
+}
+
+% --- Page style ---
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+
+% --- Helpers ---
+\newcommand{\purplechip}[1]{\colorbox{njupurplelight}{\textcolor{njupurple}{\footnotesize\bfseries\,#1\,}}}
+\newcommand{\bluechip}[1]{\colorbox{njubluelight}{\textcolor{njublue}{\footnotesize\bfseries\,#1\,}}}
+\newcommand{\cvdate}[1]{\hfill{\color{njublue}\small\bfseries #1}\\[-4pt]}
+\newcommand{\cvdateinline}[1]{{\color{njublue}\small\bfseries #1}}
+\newcommand{\cvaward}[1]{{\color{njupurple}\bfseries #1}}
+\newcommand{\muted}[1]{{\color{mutedgray}\small #1}}
+
+% Compact research card
+\newtcolorbox{rscard}{
+  colback=white, colframe=njupurpleborder,
+  boxrule=0.5pt, leftrule=2.5pt,
+  arc=2pt, outer arc=2pt,
+  left=8pt, right=8pt, top=6pt, bottom=6pt,
+  before skip=4pt, after skip=4pt,
+}
+
+\newtcolorbox{compcard}{
+  colback=white, colframe=njupurpleborder,
+  boxrule=0.5pt, leftrule=2.5pt,
+  arc=2pt, outer arc=2pt,
+  left=8pt, right=8pt, top=6pt, bottom=6pt,
+  before skip=4pt, after skip=4pt,
+}
+
+\newtcolorbox{simpleitem}{
+  colback=white, colframe=njupurpleborder,
+  boxrule=0.5pt, leftrule=2.5pt,
+  arc=2pt, outer arc=2pt,
+  left=8pt, right=8pt, top=4pt, bottom=4pt,
+  before skip=3pt, after skip=3pt,
+}
+
+% =====================================================================
+\begin{document}
+
+% ------------------------------ HEADER ------------------------------
+\begin{tcolorbox}[
+  enhanced,
+  colback=njupurple, colframe=njupurple, coltext=white,
+  arc=0pt, outer arc=0pt, boxrule=0pt,
+  left=14pt, right=14pt, top=14pt, bottom=14pt,
+  width=\textwidth,
+]
+\color{white}
+{\Huge\bfseries 冯宇杰\;/\;Yujie Feng}\\[6pt]
+{\large\bfseries 匡亚明学院\;·\;理科强化班（化生交叉方向）\;·\;2025--2029}\\[-2pt]
+{\large Kuang Yaming Honors College\;·\;Chemistry-Biology Interdisciplinary\;·\;Class of 2029}\\[8pt]
+{\small\faEnvelope\;\href{mailto:251850043@smail.nju.edu.cn}{251850043@smail.nju.edu.cn}%
+\;\quad\faMapMarker*\;南京\,/\,Nanjing, China%
+}
+\end{tcolorbox}
+
+% ------------------------------ ABOUT ------------------------------
+\section*{关于 \quad / \quad About}
+南京大学匡亚明学院 2025 级本科生，化生交叉方向。本科阶段从事蛋白质分子动力学、大分子受限输运、E3 泛素连接酶配体开发等研究；熟悉 NAMD / LAMMPS / GROMACS / Schrödinger 等模拟工具与 C / Python 编程。寻找 2029 年推免 / 暑研机会。
+
+\medskip
+\itshape\small
+First-year undergraduate (Class of 2029) at Kuang Yaming Honors College, Nanjing University, in the Chemistry-Biology Interdisciplinary Track. Research to date spans protein molecular dynamics, confined dynamics of macromolecules, and small-molecule ligand development for E3 ubiquitin ligases. Proficient in NAMD, LAMMPS, GROMACS, Schrödinger, and C / Python. Seeking 推免 (graduate-school recommendation) and summer research opportunities for 2029.
+\upshape\normalfont
+
+% ------------------------------ EDUCATION ------------------------------
+\section*{教育背景 \quad / \quad Education}
+
+\noindent\textbf{南京大学 · 匡亚明学院\;/\;Nanjing University, Kuang Yaming Honors College} \hfill \cvdateinline{2025.09 -- 2029.06}\\
+理科强化班（化生交叉方向）· 理学学士（待授）\;/\;B.S.\ in Science Intensive Program (Chemistry-Biology Interdisciplinary Track)\\
+\muted{GPA: --- \quad Rank: ---}\\[2pt]
+\textbf{\small 相关课程\,/\,Relevant Coursework:}
+\purplechip{细胞生物学\,Cell Biology}\purplechip{生物化学\,Biochemistry}\purplechip{物理化学\,Physical Chemistry}\purplechip{物理生物学\,Physical Biology}\purplechip{机器学习\,ML}
+
+% ------------------------------ RESEARCH ------------------------------
+\section*{科研经历 \quad / \quad Research Experience}
+
+% --- Project 1: E3 Ubiquitin Ligase ---
+\begin{rscard}
+{\bfseries E3 泛素连接酶中新型小分子配体的开发 \;/\; Development of Novel Small-Molecule Ligands for E3 Ubiquitin Ligases} \hfill \cvdateinline{2026.07 -- 至今\,/\,Present}\\[2pt]
+{\small\muted{导师：陈志翔研究员 · 中科院生物与化学交叉研究中心 \;/\; Advisor: Researcher Chen Zhixiang, CAS Interdisciplinary Research Center of Biology and Chemistry}}\\[2pt]
+\begin{itemize}
+  \item 针对 FBXO31 与 FBXO21 这两种蛋白质，结合实验室已设计的小分子。
+  \item 利用 Schrödinger、GROMACS、PyMOL 进行分子对接与分子动力学验证。
+  \item 参与部分候选小分子的合成过程。
+\end{itemize}
+{\itshape\small Performed molecular docking and MD validation of lab-designed small molecules targeting FBXO31 and FBXO21 using Schrödinger, GROMACS, and PyMOL; participated in partial synthesis of candidate molecules.}\\[4pt]
+\hfill\bluechip{Schrödinger}\bluechip{GROMACS}\bluechip{PyMOL}\purplechip{分子对接\,Docking}\purplechip{MD}
+\end{rscard}
+
+% --- Project 2: DPD Macromolecules ---
+\begin{rscard}
+{\bfseries 大分子受限动力学的理论研究 \;/\; Theoretical Study of Confined Dynamics of Macromolecules} \hfill \cvdateinline{2026.04 -- 2027.03}\\[2pt]
+{\small\muted{导师：汪蓉教授 · 化学学院 \;/\; Advisor: Prof.\ Wang Rong, School of Chemistry}}\\[2pt]
+\begin{itemize}
+  \item 独立主持本科生早期科研课题。
+  \item 利用耗散粒子动力学（DPD）等方法，借助 LAMMPS 开源软件及自编 C 语言程序。
+  \item 模拟大分子穿孔（translocation）过程。
+\end{itemize}
+{\itshape\small Principal investigator of an independent undergraduate-initiated research project; employed Dissipative Particle Dynamics (DPD) simulations in LAMMPS and self-written C programs to study macromolecular translocation through pores.}\\[4pt]
+\hfill\bluechip{LAMMPS}\bluechip{C}\purplechip{DPD}\purplechip{软物质\,Soft Matter}
+\end{rscard}
+
+% --- Project 3: BBL Protein ---
+\begin{rscard}
+{\bfseries BBL 蛋白质及其突变体的基本结构分析 \;/\; Basic Structural Analysis of BBL Protein and Its Mutants} \hfill \cvdateinline{2025.12 -- 2026.03}\\[2pt]
+{\small\muted{导师：董昊教授 · 匡亚明学院 \;/\; Advisor: Prof.\ Dong Hao, Kuang Yaming Honors College}}\\[2pt]
+\begin{itemize}
+  \item 利用分子动力学（MD）模拟，主要使用 NAMD，并用 VMD 做可视化分析。
+  \item 分析特定定点突变引起的氢键、盐桥网络变化。
+  \item 阐述其对空间构象与折叠路径的影响。
+\end{itemize}
+{\itshape\small Performed MD simulations using NAMD; visualized with VMD; analyzed hydrogen-bond and salt-bridge network changes induced by site-directed mutations; elucidated effects on spatial conformation and folding pathways.}\\[4pt]
+\hfill\bluechip{NAMD}\bluechip{VMD}\purplechip{MD}\purplechip{蛋白质折叠\,Protein Folding}
+\end{rscard}
+
+% ------------------------------ PUBLICATIONS ------------------------------
+\section*{论文 \quad / \quad Publications}
+
+\begin{enumerate}[leftmargin=18pt,nosep,label=\arabic*.]
+\item 冯宇杰, 董昊. 基于分子动力学模拟的 BBL 蛋白质及其突变体的多角度分析. \textit{南京大学第 29 届基础学科论坛} (2026). \cvaward{三等奖}.\\[2pt]
+{\itshape\small Feng Y., Dong H. (2026). \textit{Multi-angle Analysis of BBL Protein and Its Mutants Based on Molecular Dynamics Simulations.} 29th Nanjing University Basic Disciplines Forum. \cvaward{Third Prize}.}
+\end{enumerate}
+
+% ------------------------------ SKILLS ------------------------------
+\section*{技能 \quad / \quad Skills}
+
+\noindent\begin{tabularx}{\textwidth}{@{}p{3.2cm} X@{}}
+\textbf{\small 编程语言 \,/\, Programming} & \purplechip{C}\;\purplechip{Python}\;\purplechip{HTML} \\[3pt]
+\textbf{\small 模拟软件 \,/\, Simulation} & \bluechip{GROMACS}\;\bluechip{LAMMPS}\;\bluechip{NAMD}\;\bluechip{Schrödinger}\;\bluechip{Gaussian}\;\bluechip{PyMOL}\;\bluechip{ChemDraw} \\[3pt]
+\textbf{\small 研究方法 \,/\, Methods} & \purplechip{分子对接\,Docking}\;\purplechip{MD}\;\purplechip{机器学习\,ML}\;\purplechip{量子化学\,Quantum Chem.}\;\purplechip{物化生实验\,Wet Lab} \\[3pt]
+\textbf{\small 数据与系统 \,/\, Data \& Systems} & \bluechip{Origin}\;\bluechip{MATLAB}\;\bluechip{Linux 服务器\,Linux Servers} \\[3pt]
+\textbf{\small 语言 \,/\, Languages} & \bluechip{中文（母语）\,Chinese (Native)}\;\bluechip{English（--- 待补\,TBD）} \\
+\end{tabularx}
+
+% ------------------------------ AWARDS ------------------------------
+\section*{奖项与荣誉 \quad / \quad Awards \& Honors}
+
+\subsection*{奖学金 / 荣誉 \;/\; Scholarships \& Honors}
+\muted{[目前无内容 --- TBD: scholarships, honorary titles, etc.]}
+
+\subsection*{竞赛 \;/\; Competitions}
+\begin{compcard}
+{\bfseries 首届"AI + 合成生物"创新大赛 \;/\; First "AI + Synthetic Biology" Innovation Competition} \hfill \cvdateinline{2026.05 -- 2026.09\,(进行中\,/\,Ongoing)}\\[2pt]
+{\small\muted{主办：天津大学合成生物技术全国重点实验室 \;/\; Host: National Key Laboratory of Synthetic Biology Technology, Tianjin University}}\\[2pt]
+\begin{itemize}
+  \item 利用 mt-grasp 采样方法，结合已有模型进行采样与分子动力学模拟。
+  \item 设计出改善溶菌酶（lysozyme）热稳定性的方案。
+\end{itemize}
+{\itshape\small Employed the mt-grasp sampling method combined with pre-developed models for sampling and MD simulations to design a method improving lysozyme thermal stability.}\\[2pt]
+{\small\muted{导师：董昊教授 · 匡亚明学院 \;/\; Advisor: Prof.\ Dong Hao, Kuang Yaming Honors College}}
+\end{compcard}
+
+% ------------------------------ INTERESTS ------------------------------
+\section*{研究兴趣 \quad / \quad Research Interests}
+
+我特别感兴趣于将计算模拟与实验验证相结合，用于药物与材料的理性设计。两个具体方向：
+\itshape\small
+\begin{enumerate}[leftmargin=18pt,nosep]
+\item 通过干--湿实验闭环加速 hit 发现与 lead 优化；
+\item 利用机器学习与分子模拟结合，辅助蛋白质工程与功能材料的改进。
+\end{enumerate}
+\upshape\normalfont
+\medskip
+I am particularly interested in integrating computational simulations with experimental validation for rational drug and material design. Two specific directions:
+\begin{enumerate}[leftmargin=18pt,nosep]
+\item Accelerating hit discovery and lead optimization via closed-loop dry-/wet-lab workflows;
+\item Leveraging machine learning combined with molecular simulations to assist protein engineering and the improvement of functional materials.
+\end{enumerate}
+
+% ------------------------------ PRACTICE ------------------------------
+\section*{社会实践 \quad / \quad Social Practice}
+
+\begin{simpleitem}
+\textbf{2026 南星梦想计划 · 江苏省如皋中学团队 队长 · 优秀志愿者 · 服务时长 > 100 小时}\\
+{\itshape\small 2026 Nanxing Dream Plan · Rugao High School (Jiangsu) team leader · Outstanding Volunteer · > 100 service hours}
+\hfill \cvdateinline{2026}
+\end{simpleitem}
+
+\begin{simpleitem}
+\textbf{如皋团市委聘"驻宁青春大使"}\\
+{\itshape\small Appointed "Youth-in-Nanjing" Ambassador by the Rugao Municipal Committee of the Communist Youth League}
+\hfill \cvdateinline{2025.10 -- 2027.11}
+\end{simpleitem}
+
+% ------------------------------ STUDENT WORK ------------------------------
+\section*{学生工作 \quad / \quad Student Work}
+
+\begin{simpleitem}
+南京大学新生学院安邦书院 · 团学联 \textbf{学术科创部 成员}\\
+{\itshape\small Member, Academic \& Innovation Dept., Youth League and Student Union Federation, Anbang Academy (School of Freshmen), NJU}
+\hfill \cvdateinline{2025.09 -- 2026.06}
+\end{simpleitem}
+
+\begin{simpleitem}
+南京大学"如皋中学班" \textbf{班长}\\
+{\itshape\small \textbf{Class President}, "Rugao High School Class" Cohort, NJU}
+\hfill \cvdateinline{2025.09 -- 2026.08}
+\end{simpleitem}
+
+\begin{simpleitem}
+南京大学招生宣传志愿者协会 · 江苏省如皋中学 \textbf{理事}\\
+{\itshape\small \textbf{Director} (Rugao HS constituency), Admissions Promotion Volunteer Association, NJU}
+\hfill \cvdateinline{2026.05 -- 2027.05}
+\end{simpleitem}
+
+% ------------------------------ REFERENCES ------------------------------
+\section*{推荐人 \quad / \quad References}
+
+\muted{[TBD --- 待补充：推荐人姓名 / 职称 / 联系邮箱 \;/\, Recommender name / title / contact email]}
+
+% ------------------------------ FOOTER ------------------------------
+\vfill
+\begin{center}
+\small\color{mutedgray}
+\faGithub\;github.com/fragile-0118\quad $\cdot$\quad
+\href{https://fragile-0118.github.io/resume/}{fragile-0118.github.io/resume/}\\[2pt]
+{\footnotesize © 2026 冯宇杰 / Yujie Feng \quad · \quad 详细版：\href{https://github.com/fragile-0118/resume}{github.com/fragile-0118/resume}}
+\end{center}
+
+\end{document}
