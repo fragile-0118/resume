@@ -451,32 +451,112 @@ section h3.subhead {
 .sidebar::-webkit-scrollbar { width: 6px; }
 .sidebar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 3px; }
 
-/* ---------- Mobile (<768px) ---------- */
+/* ---------- Tablet (<=1024px): narrower sidebar ---------- */
+@media (max-width: 1024px) {
+  :root { --sidebar-width: 180px; }
+  .main { padding: 28px 28px 40px; }
+}
+
+/* ---------- Phone (<=768px): sidebar collapses to top ---------- */
 @media (max-width: 768px) {
+  body { font-size: 13.5px; }
   .layout { flex-direction: column; }
   .sidebar {
     width: 100%;
     height: auto;
     position: static;
-    padding: 18px 16px;
+    padding: 16px 14px;
   }
-  .profile { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
-  .avatar-placeholder { width: 52px; height: 52px; margin: 0; }
-  .affiliation { text-align: left; }
+  .profile { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+  .avatar-placeholder { width: 48px; height: 48px; margin: 0; font-size: 9px; }
+  .name { font-size: 16px; margin: 0; }
+  .affiliation { font-size: 10.5px; text-align: left; }
+  .contact { padding: 6px 8px; font-size: 10.5px; margin-bottom: 10px; }
+  .lang-toggle { margin-bottom: 10px; }
+
   .sidebar-nav {
     flex-direction: row;
     overflow-x: auto;
+    overflow-y: hidden;
     gap: 4px;
     padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
   }
-  .sidebar-nav a { white-space: nowrap; flex-shrink: 0; }
-  .main { padding: 18px 16px 32px; }
-  .hero { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .sidebar-nav a {
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding: 8px 12px;
+    font-size: 12px;
+    min-height: 36px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .main { padding: 16px 14px 28px; }
+
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 16px;
+  }
+  .hero-name { font-size: 18px; }
+  .hero-subtitle { font-size: 11px; }
+  .hero-summary { font-size: 11.5px; }
+
   .research-block { gap: 8px; }
   .timeline-col { width: 10px; }
-  .skills-grid { grid-template-columns: 1fr; }
+  .tl-dot-current { width: 7px; height: 7px; }
+  .tl-dot-past { width: 6px; height: 6px; }
+
+  .r-card-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+  .r-card-date { font-size: 10px; }
+
+  .skills-grid { grid-template-columns: 1fr; gap: 8px; }
+
   .edu-row { flex-direction: column; gap: 6px; }
   .edu-meta { width: auto; }
+  .edu-school { font-size: 12.5px; }
+  .edu-coursework { flex-direction: column; align-items: flex-start; gap: 4px; }
+
+  .simple-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+  .simple-date { font-size: 10px; }
+
+  .comp-head { flex-direction: column; align-items: flex-start; gap: 2px; }
+
+  section { margin-bottom: 20px; }
+  section h2 { font-size: 13px; }
+}
+
+/* ---------- Small phone (<=420px) ---------- */
+@media (max-width: 420px) {
+  body { font-size: 13px; }
+  .sidebar { padding: 14px 12px; }
+  .name { font-size: 15px; }
+  .hero-name { font-size: 17px; }
+  .hero { padding: 14px; }
+  .r-card { padding: 9px 10px; }
+  .r-card-title { font-size: 12.5px; }
+  .r-card-body { font-size: 11px; }
+  .ct-tag { font-size: 9.5px; padding: 1px 6px; }
+  .comp-card { padding: 9px 10px; }
+  .main { padding: 14px 12px 24px; }
+  .sidebar-nav a { padding: 8px 10px; font-size: 11.5px; }
+}
+
+/* ---------- Touch devices: remove hover-only styles ---------- */
+@media (hover: none) {
+  .sidebar-nav a:hover { background: transparent; }
+  .btn-print:hover { background: rgba(255,255,255,0.18); }
 }
 
 /* ---------- Print / PDF ---------- */
