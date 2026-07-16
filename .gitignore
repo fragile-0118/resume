@@ -9,5 +9,9 @@ Thumbs.db
 .vscode/
 .idea/
 
+# Local inspection / scratch files
+_live_*.css
+_*.html
+
 # Avatar (owner uploads directly)
-# assets/img/avatar.jpg is uncommented after first upload if you want to ignore it from git history tests_live_style.css
+# assets/img/avatar.jpg is uncommented after first upload if you want to ignore it from git history
