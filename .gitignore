@@ -1,0 +1,13 @@
+# Personal local files
+.DS_Store
+Thumbs.db
+
+# Editor / OS noise
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Avatar (owner uploads directly)
+# assets/img/avatar.jpg is uncommented after first upload if you want to ignore it from git history tests
